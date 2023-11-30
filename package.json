@@ -1,0 +1,19 @@
+{
+  "name": "simple-qr-node",
+  "version": "1.0.2",
+  "keywords": [
+    "qr",
+    "qrcode",
+    "qrcodejs",
+    "easyqrcode",
+    "javascript",
+    "generatorqrcode",
+    "server",
+    "serverside",
+    "lightweight"
+  ],
+  "dependencies": {
+    "qrcode": "^1.5.3",
+    "sharp": "^0.33.0"
+  }
+}
