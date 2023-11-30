@@ -1,6 +1,6 @@
 {
   "name": "simple-qr-node",
-  "version": "1.0.2",
+  "version": "1.0.6",
   "keywords": [
     "qr",
     "qrcode",
@@ -12,6 +12,8 @@
     "serverside",
     "lightweight"
   ],
+  "author": "Anthony CONSOLARO",
+  "repository": "github:0xAnthony/simple-qr-node",
   "dependencies": {
     "qrcode": "^1.5.3",
     "sharp": "^0.33.0"

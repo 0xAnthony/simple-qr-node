@@ -1,7 +1,7 @@
 const QRCode = require('qrcode')
 const sharp = require('sharp');
 
-module.export = async function generateQR(options) {
+exports.default = async function SimpleQR(options) {
     try {
         const qrCodeImageSkin = await QRCode.toString(options.text, {type: 'svg'})
         const qrCodeImagePath = qrCodeImageSkin
@@ -12,13 +12,14 @@ module.export = async function generateQR(options) {
             .resize(100, 100)
             .toBuffer();
 
-        const qrWithLogo = await sharp(Buffer.from(qrCodeImagePath))
+        const finalQR = await sharp(Buffer.from(qrCodeImagePath))
             .resize(500, 500)
             .extract({ left: 44, top: 44, width: 412, height: 412 })
             .composite([{ input: logo, gravity: 'center' }])
+            .toFormat('webp')
             .toBuffer();
 
-        await sharp(qrWithLogo).toFile(options.output ?? 'qr.png');
+        return finalQR
     } catch (err) {
         console.error(err)
     }
